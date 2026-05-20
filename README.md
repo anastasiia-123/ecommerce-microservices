@@ -9,8 +9,7 @@ graph TD
     Client[Клієнт / REST Client] --> Gateway[Nginx API Gateway на порту 8080]
     Gateway -->|api-products| Catalog[Catalog Service на порту 3001]
     Gateway -->|api-orders| Order[Order Service на порту 3002]
-    Order -->|Синхронний HTTP запит: Перевірка та Резерв| Catalog
-
+    Order -->|Синхронний HTTP запит| Catalog
     Структура проекту (Монорепозиторій)
 services/catalog-service — Управління товарами та залишками на складі (Порт 3001)
 
