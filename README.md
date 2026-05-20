@@ -6,10 +6,10 @@
 
 ```mermaid
 graph TD
-    Client[Клієнт / REST Client] -->|HTTP :8080| Gateway[Nginx API Gateway]
-    Gateway -->|/api/products| Catalog[Catalog Service :3001]
-    Gateway -->|/api/orders| Order[Order Service :3002]
-    Order -->|Sync HTTP: Перевірка та Резерв| Catalog
+    Client[Клієнт / REST Client] --> Gateway[Nginx API Gateway на порту 8080]
+    Gateway -->|api-products| Catalog[Catalog Service на порту 3001]
+    Gateway -->|api-orders| Order[Order Service на порту 3002]
+    Order -->|Синхронний HTTP запит: Перевірка та Резерв| Catalog
 
     Структура проекту (Монорепозиторій)
 services/catalog-service — Управління товарами та залишками на складі (Порт 3001)
@@ -31,3 +31,4 @@ API Gateway буде доступний на порту 8080.
 Catalog Service Health: GET http://localhost:3001/health
 
 Order Service Health: GET http://localhost:3002/health
+---
