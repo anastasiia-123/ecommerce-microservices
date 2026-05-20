@@ -3,7 +3,6 @@
 Проект містить мікросервісну архітектуру для управління каталогом товарів та замовленнями з використанням API Gateway (Nginx).
 
 ## 🗺️ Діаграма системи (System Diagram)
-
 ```mermaid
 graph TD
     Client[Клієнт / REST Client] --> Gateway[Nginx API Gateway на порту 8080]
